@@ -27,4 +27,5 @@ public class Prefs {
         return preferences.getInt("high_score", 0);
     }
 
+
 }

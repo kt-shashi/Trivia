@@ -1,11 +1,13 @@
 package com.shashi.trivia.data;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.shashi.trivia.MainActivity;
 import com.shashi.trivia.controller.AppController;
 import com.shashi.trivia.model.Question;
 
@@ -66,8 +68,6 @@ public class QuestionBank {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
-
 
             }
         });

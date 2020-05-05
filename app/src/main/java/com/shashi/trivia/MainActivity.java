@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         prefs = new Prefs(MainActivity.this);
 
 
-        Log.d("Second", "Prefs: " + prefs.getHighScore());
-
 
         nextButton = findViewById(R.id.next_Button);
         prevButton = findViewById(R.id.prev_Button);
@@ -75,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         falseButton.setOnClickListener(this);
 
 
+
         questionCounterTextView.setText("");
         scoretextView.setText("");
         highestScore.setText("");
@@ -84,8 +83,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void processFinished(ArrayList<Question> questionArrayList) {
 
-                questionTextView.setText(questionArrayList.get(currentQuestionindex).getAnswer());
+                Log.d("SizeQuestion", String.valueOf(questionArrayList.size()));
+
+                questionTextView.setText(questionArrayList.get(0).getAnswer());
                 questionCounterTextView.setText((currentQuestionindex + 1) + " / " + questionArrayList.size());
+
+
                 scoretextView.setText("Score 0");
                 highestScore.setText("Best: " + prefs.getHighScore());
 
@@ -140,6 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void updateQuestion() {
+
         String question = questionList.get(currentQuestionindex).getAnswer();
         questionTextView.setText(question);
         questionCounterTextView.setText((currentQuestionindex + 1) + " / " + questionList.size());
@@ -238,6 +242,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onPause() {
 
         prefs.saveHighestScore(score.getScore());
+
+
         super.onPause();
 
     }
