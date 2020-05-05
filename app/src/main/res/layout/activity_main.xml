@@ -27,14 +27,14 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
-        android:layout_height="225dp"
-        android:layout_marginTop="90dp"
+        android:layout_height="182dp"
+        android:layout_marginTop="100dp"
         app:cardBackgroundColor="#888888"
         app:cardCornerRadius="5dp"
         app:cardElevation="7dp"
         app:contentPadding="8dp"
         app:layout_constraintEnd_toEndOf="@+id/counter_Text"
-        app:layout_constraintStart_toStartOf="@+id/counter_Text2"
+        app:layout_constraintStart_toStartOf="@+id/score_textview"
         app:layout_constraintTop_toBottomOf="@+id/title">
 
         <TextView
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:fontFamily="@font/candal"
-            android:text="Hello there here we are going to add some questions."
+            android:text="Loading..."
             android:textColor="#000000"
             android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
@@ -109,7 +109,7 @@
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/coiny"
         android:gravity="center"
-        android:padding="5dp"
+        android:padding="3dp"
         android:text="@string/counter_Questions"
         android:textColor="#F2ECEC"
         android:textSize="18sp"
@@ -117,14 +117,15 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/counter_Text2"
+        android:id="@+id/score_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:fontFamily="@font/coiny"
         android:gravity="center"
-        android:padding="5dp"
-        android:textColor="#F2ECEC"
+        android:padding="3dp"
+        android:text="Score: 0"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/counter_Text"
         app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +139,19 @@
         android:layout_marginBottom="7dp"
         android:fontFamily="@font/ubuntu_mono"
         android:text="Developer:Shashi"
-        android:textColor="#FBFAFA"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/highest_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/patua_one"
+        android:padding="2dp"
+        android:text="Best:"
+        android:textColor="#FFEB3B"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/score_textview"
+        app:layout_constraintStart_toStartOf="@+id/score_textview" />
 </androidx.constraintlayout.widget.ConstraintLayout>
